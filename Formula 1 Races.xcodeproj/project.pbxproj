@@ -11,6 +11,7 @@
 		CCE9925C29B3350F00674001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9925B29B3350F00674001 /* ContentView.swift */; };
 		CCE9925E29B3350F00674001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9925D29B3350F00674001 /* Assets.xcassets */; };
 		CCE9926129B3350F00674001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9926029B3350F00674001 /* Preview Assets.xcassets */; };
+		CCE9926929B3359D00674001 /* FormulaOneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9926829B3359D00674001 /* FormulaOneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		CCE9925B29B3350F00674001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CCE9925D29B3350F00674001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCE9926029B3350F00674001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CCE9926829B3359D00674001 /* FormulaOneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,8 @@
 			children = (
 				CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */,
 				CCE9925B29B3350F00674001 /* ContentView.swift */,
+				CCE9926A29B335C400674001 /* API Manager */,
+				CCE9926729B3351700674001 /* Model */,
 				CCE9925D29B3350F00674001 /* Assets.xcassets */,
 				CCE9925F29B3350F00674001 /* Preview Content */,
 			);
@@ -65,6 +69,21 @@
 				CCE9926029B3350F00674001 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CCE9926729B3351700674001 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9926829B3359D00674001 /* FormulaOneModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCE9926A29B335C400674001 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "API Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE9926929B3359D00674001 /* FormulaOneModel.swift in Sources */,
 				CCE9925C29B3350F00674001 /* ContentView.swift in Sources */,
 				CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */,
 			);
