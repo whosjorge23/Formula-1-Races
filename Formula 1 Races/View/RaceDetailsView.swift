@@ -18,7 +18,16 @@ struct RaceDetailsView: View {
 //                    Text(race.raceName)
 //                        .font(.largeTitle)
                 }
-                Map(coordinateRegion: $viewModel.region)
+//                Map(coordinateRegion: $viewModel.region)
+                Map(coordinateRegion: $viewModel.region, annotationItems: [$viewModel.annotation]) { annotation in
+                    MapAnnotation(coordinate: viewModel.annotation.coordinate) {
+//                        Circle()
+//                            .foregroundColor(.orange.opacity(0.50))
+//                            .frame(width: 30, height: 30)
+                        Text("🏁")
+                            .font(.largeTitle)
+                    }
+                }
                     .frame(height: 300)
                     .cornerRadius(10)
                 HStack {

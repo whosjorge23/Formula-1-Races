@@ -59,6 +59,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		CCCBCC3929B50A930019D8EA /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		CCE9924D29B3350E00674001 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */,
-				CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */,
+				CCCBCC3929B50A930019D8EA /* APIManager */,
 				CCCBCC3429B48B710019D8EA /* Data */,
 				CCCBCC3329B488860019D8EA /* View */,
 				CCE9926D29B337C300674001 /* ViewModel */,

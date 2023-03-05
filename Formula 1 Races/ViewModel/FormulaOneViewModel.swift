@@ -12,6 +12,7 @@ class RaceListViewModel: ObservableObject {
     @Published var races = [Race]()
     @Published var selectedRace: Race?
     @Published var region = MKCoordinateRegion()
+    @Published var annotation = MKPointAnnotation()
     
     private let api = APIManager()
     
@@ -168,5 +169,12 @@ class RaceListViewModel: ObservableObject {
         let center = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         region = MKCoordinateRegion(center: center, span: span)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
+    }
+}
+
+extension MKPointAnnotation: Identifiable {
+    public var id: String {
+        return "\(coordinate.latitude), \(coordinate.longitude)"
     }
 }
