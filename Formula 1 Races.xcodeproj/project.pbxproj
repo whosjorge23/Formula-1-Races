@@ -38,6 +38,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCCBCC3329B488860019D8EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCE9925B29B3350F00674001 /* RaceListView.swift */,
+				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CCE9924D29B3350E00674001 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */,
-				CCE9925B29B3350F00674001 /* RaceListView.swift */,
-				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
+				CCCBCC3329B488860019D8EA /* View */,
 				CCE9926D29B337C300674001 /* ViewModel */,
 				CCE9926729B3351700674001 /* Model */,
 				CCE9925D29B3350F00674001 /* Assets.xcassets */,

@@ -18,6 +18,10 @@ struct Race: Codable {
     let Circuit: Circuit
     let date: String
     let time: String
+    let FirstPractice: FirstPractice
+    let SecondPractice: SecondPractice
+    let ThirdPractice: ThirdPractice
+    let Qualifying: Qualifying
 }
 
 struct Circuit: Codable {
@@ -32,4 +36,24 @@ struct Location: Codable {
     let long: String
     let locality: String
     let country: String
+}
+
+struct FirstPractice: Codable {
+    let date: String
+    let time: String
+}
+
+struct SecondPractice: Codable {
+    let date: String
+    let time: String
+}
+
+struct ThirdPractice: Codable {
+    let date: String
+    let time: String
+}
+
+struct Qualifying: Codable {
+    let date: String
+    let time: String
 }
