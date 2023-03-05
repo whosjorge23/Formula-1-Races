@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */; };
 		CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */; };
 		CCE9925C29B3350F00674001 /* RaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9925B29B3350F00674001 /* RaceListView.swift */; };
 		CCE9925E29B3350F00674001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9925D29B3350F00674001 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsView.swift; sourceTree = "<group>"; };
 		CCE9925629B3350F00674001 /* Formula 1 Races.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Formula 1 Races.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula_1_RacesApp.swift; sourceTree = "<group>"; };
 		CCE9925B29B3350F00674001 /* RaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceListView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */,
 				CCE9925B29B3350F00674001 /* RaceListView.swift */,
+				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
 				CCE9926D29B337C300674001 /* ViewModel */,
 				CCE9926729B3351700674001 /* Model */,
 				CCE9925D29B3350F00674001 /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 				CCE9926929B3359D00674001 /* FormulaOneModel.swift in Sources */,
 				CCE9925C29B3350F00674001 /* RaceListView.swift in Sources */,
 				CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */,
+				CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,22 @@ struct RaceListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.races, id: \.round) { race in
-                VStack(alignment: .leading) {
-                    Text("\(race.raceName)")
-                        .font(.headline)
-                    Text("\(race.date) at \(viewModel.formatTimeInGMT(timeString: race.time))")      .font(.subheadline)
-                    Text("\(race.Circuit.circuitName), \(race.Circuit.Location.locality), \(race.Circuit.Location.country)")
-                        .font(.subheadline)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("**\(race.raceName)**")
+                            .font(.headline)
+                        Text("**Race** \(viewModel.formatDate(dateString: race.date)) at \(viewModel.formatTimeInGMT(timeString: race.time))")
+                            .font(.subheadline)
+                        Text("**Circuit** \(race.Circuit.circuitName)\n**Place** \(race.Circuit.Location.locality), \(race.Circuit.Location.country) \(viewModel.countryFlag(country: race.Circuit.Location.country))")
+                            .font(.subheadline)
+                    }
+                    Spacer()
+                    VStack {
+                        Text("**Round**")
+                        
+                        Text("\(race.round)")
+                            .font(.largeTitle)
+                    }
                 }
             }
             .navigationTitle("🏁F1 Races 2023🏁")
