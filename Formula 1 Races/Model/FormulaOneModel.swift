@@ -18,10 +18,10 @@ struct Race: Codable {
     let Circuit: Circuit
     let date: String
     let time: String
-    let FirstPractice: FirstPractice
-    let SecondPractice: SecondPractice
-    let ThirdPractice: ThirdPractice
-    let Qualifying: Qualifying
+    let FirstPractice: FirstPractice?
+    let SecondPractice: SecondPractice?
+    let ThirdPractice: ThirdPractice?
+    let Qualifying: Qualifying?
 }
 
 struct Circuit: Codable {

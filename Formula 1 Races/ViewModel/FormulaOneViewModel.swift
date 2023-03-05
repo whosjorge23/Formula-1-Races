@@ -5,7 +5,7 @@
 //  Created by Giorgio Giannotta on 04/03/23.
 //
 
-import Foundation
+import SwiftUI
 import MapKit
 
 class RaceListViewModel: ObservableObject {
@@ -13,29 +13,53 @@ class RaceListViewModel: ObservableObject {
     @Published var selectedRace: Race?
     @Published var region = MKCoordinateRegion()
     
+    private let api = APIManager()
+    
+    func runOnMain(_ method: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            withAnimation {
+                method()
+            }
+        }
+    }
+    
     func fetchRaces() {
-        let url = URL(string: "https://ergast.com/api/f1/2023.json")!
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+//        let url = URL(string: "https://ergast.com/api/f1/2023.json")!
+//
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//
+//            guard let data = data else {
+//                print("No data received")
+//                return
+//            }
+//
+//            do {
+//                let raceData = try JSONDecoder().decode(RaceData.self, from: data)
+//                DispatchQueue.main.async {
+//                    self.races = raceData.MRData.RaceTable.Races
+//                    print("Race: \(raceData)")
+//                }
+//            } catch {
+//                print("Error: \(error.localizedDescription)")
+//            }
+//        }.resume()
+        api.fetchData(url: "https://ergast.com/api/f1/2023.json", model: RaceData.self) { result in
+            self.runOnMain {
+                self.races = result.MRData.RaceTable.Races
             }
-            
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-            
-            do {
-                let raceData = try JSONDecoder().decode(RaceData.self, from: data)
-                DispatchQueue.main.async {
-                    self.races = raceData.MRData.RaceTable.Races
+        } failure: { error in
+            self.runOnMain {
+                print("IP: \(error.localizedDescription)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                    print("Trying again to fetch IP...")
+                    self.fetchRaces()
                 }
-            } catch {
-                print(error.localizedDescription)
             }
-        }.resume()
+        }
     }
     
     // Define a helper function to format the time in GMT timezone
@@ -49,7 +73,7 @@ class RaceListViewModel: ObservableObject {
 //        return String("\((Int(hour) ?? 0) + 1):\(minute)")
         let time = timeString.dropLast(1)
         let gmtTimeString = time
-        var timeToString = ""
+        var timeToString = "N/A"
 
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
@@ -64,7 +88,11 @@ class RaceListViewModel: ObservableObject {
 //            print("Invalid GMT time string")
         }
         let raceTime = timeToString.dropLast(3)
-        return String(raceTime)
+        if raceTime == "" {
+            return "🤷‍♂️🤷‍♂️"
+        }else {
+            return String(raceTime)
+        }
     }
     
     // Define a helper function to format the date
@@ -76,7 +104,12 @@ class RaceListViewModel: ObservableObject {
 //        print(month)
 //        print(year)
 //        print(dateString)
-        return "\(month)/\(day)/\(year)"
+        if month == "" && day == "" && year == "" {
+            return "🤷‍♂️🤷‍♂️"
+        }else {
+            return "\(month)/\(day)/\(year)"
+        }
+        
     }
     
     func countryFlag(country: String) -> String {

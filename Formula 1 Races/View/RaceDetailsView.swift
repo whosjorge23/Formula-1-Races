@@ -41,10 +41,10 @@ struct RaceDetailsView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.FirstPractice.date))")
+                            Text("**Date**: \(viewModel.formatDate(dateString: race.FirstPractice?.date ?? "N/A"))")
                                 .font(.title3)
                             Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.FirstPractice.time))")
+                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.FirstPractice?.time ?? "N/A"))")
                                 .font(.title3)
                         }
                         
@@ -56,10 +56,10 @@ struct RaceDetailsView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.SecondPractice.date))")
+                            Text("**Date**: \(viewModel.formatDate(dateString: race.SecondPractice?.date ?? "N/A"))")
                                 .font(.title3)
                             Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.SecondPractice.time))")
+                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.SecondPractice?.time ?? "N/A"))")
                                 .font(.title3)
                         }
                     }
@@ -70,10 +70,10 @@ struct RaceDetailsView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.ThirdPractice.date))")
+                            Text("**Date**: \(viewModel.formatDate(dateString: race.ThirdPractice?.date ?? "N/A"))")
                                 .font(.title3)
                             Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.ThirdPractice.time))")
+                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.ThirdPractice?.time ?? "N/A"))")
                                 .font(.title3)
                         }
                     }
@@ -84,10 +84,10 @@ struct RaceDetailsView: View {
                             Spacer()
                         }
                         HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.Qualifying.date))")
+                            Text("**Date**: \(viewModel.formatDate(dateString: race.Qualifying?.date ?? "N/A"))")
                                 .font(.title3)
                             Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.Qualifying.time))")
+                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.Qualifying?.time ?? "N/A"))")
                                 .font(.title3)
                         }
                     }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RaceListView.swift
 //  Formula 1 Races
 //
 //  Created by Giorgio Giannotta on 04/03/23.
