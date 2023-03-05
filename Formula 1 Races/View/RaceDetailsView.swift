@@ -15,8 +15,8 @@ struct RaceDetailsView: View {
         var body: some View {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(race.raceName)
-                        .font(.largeTitle)
+//                    Text(race.raceName)
+//                        .font(.largeTitle)
                 }
                 Map(coordinateRegion: $viewModel.region)
                     .frame(height: 300)
@@ -95,7 +95,7 @@ struct RaceDetailsView: View {
                 Spacer()
             }
             .padding()
-            .navigationTitle("Race Details")
+            .navigationTitle(race.raceName)
             .onAppear{
                 viewModel.setRegion(for: race)
             }

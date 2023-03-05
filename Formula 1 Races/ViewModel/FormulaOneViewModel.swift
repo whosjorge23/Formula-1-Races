@@ -158,9 +158,8 @@ class RaceListViewModel: ObservableObject {
             case "UAE":
                 return "🇦🇪"
             default:
-                "Country"
+                return "Country"
         }
-        return country
     }
     
     func setRegion(for race: Race) {
