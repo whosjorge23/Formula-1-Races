@@ -36,6 +36,7 @@ struct RaceListView: View {
             }
             .navigationTitle("🏁F1 Races 2023🏁")
         }
+//        .environmentObject(viewModel)
         .onAppear {
             viewModel.fetchRaces()
         }

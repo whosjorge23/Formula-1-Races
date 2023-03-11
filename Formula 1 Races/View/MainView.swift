@@ -10,16 +10,16 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-                    RaceListView()
-                        .tabItem {
-                            Label("Race List", systemImage: "list.dash")
-                        }
+            RaceListView()
+                .tabItem {
+                    Label("Race List", systemImage: "list.dash")
+            }
 
-                    CircuitMapView()
-                        .tabItem {
-                            Label("Circuits Map", systemImage: "map")
-                        }
-                }
+            CircuitMapView()
+                .tabItem {
+                    Label("Circuits Map", systemImage: "map")
+            }
+        }
     }
 }
 

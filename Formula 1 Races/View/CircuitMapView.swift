@@ -11,7 +11,7 @@ import MapKit
 struct CircuitMapView: View {
     @StateObject var viewModel = RaceListViewModel()
     @State private var region : MKCoordinateRegion = {
-            var mapCoordinate = CLLocationCoordinate2D(latitude: 37.6000, longitude: -95.6650)
+            var mapCoordinate = CLLocationCoordinate2D(latitude: 42.6384261, longitude: 12.674297)
             
             var mapZoomLevel = MKCoordinateSpan(latitudeDelta: 70.0, longitudeDelta: 70.0)
             
