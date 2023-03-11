@@ -10,6 +10,7 @@
 		CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */; };
 		CCCBCC3629B48BA40019D8EA /* races.json in Resources */ = {isa = PBXBuildFile; fileRef = CCCBCC3529B48BA40019D8EA /* races.json */; };
 		CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */; };
+		CCCBCC3B29BC6E750019D8EA /* CircuitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */; };
 		CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */; };
 		CCE9925C29B3350F00674001 /* RaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9925B29B3350F00674001 /* RaceListView.swift */; };
 		CCE9925E29B3350F00674001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9925D29B3350F00674001 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsView.swift; sourceTree = "<group>"; };
 		CCCBCC3529B48BA40019D8EA /* races.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = races.json; sourceTree = "<group>"; };
 		CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitMapView.swift; sourceTree = "<group>"; };
 		CCE9925629B3350F00674001 /* Formula 1 Races.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Formula 1 Races.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula_1_RacesApp.swift; sourceTree = "<group>"; };
 		CCE9925B29B3350F00674001 /* RaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceListView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE9925B29B3350F00674001 /* RaceListView.swift */,
+				CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */,
 				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
 			);
 			path = View;
@@ -198,6 +201,7 @@
 				CCE9926929B3359D00674001 /* FormulaOneModel.swift in Sources */,
 				CCE9925C29B3350F00674001 /* RaceListView.swift in Sources */,
 				CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */,
+				CCCBCC3B29BC6E750019D8EA /* CircuitMapView.swift in Sources */,
 				CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

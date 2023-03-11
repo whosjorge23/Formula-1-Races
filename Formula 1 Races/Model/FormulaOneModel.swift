@@ -1,3 +1,5 @@
+import Foundation
+
 struct RaceData: Codable {
     let MRData: MRData
 }
@@ -24,7 +26,8 @@ struct Race: Codable {
     let Qualifying: Qualifying?
 }
 
-struct Circuit: Codable {
+struct Circuit: Codable, Identifiable {
+    let id = UUID()
     let circuitId: String
     let url: String
     let circuitName: String

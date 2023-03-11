@@ -10,6 +10,7 @@ import MapKit
 
 class RaceListViewModel: ObservableObject {
     @Published var races = [Race]()
+    @Published var circuitLocation = [Circuit]()
     @Published var selectedRace: Race?
     @Published var region = MKCoordinateRegion()
     @Published var annotation = MKPointAnnotation()
@@ -54,10 +55,32 @@ class RaceListViewModel: ObservableObject {
             }
         } failure: { error in
             self.runOnMain {
-                print("IP: \(error.localizedDescription)")
+                print("Races: \(error.localizedDescription)")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    print("Trying again to fetch IP...")
+                    print("Trying again to fetch Races...")
                     self.fetchRaces()
+                }
+            }
+        }
+    }
+    
+    //Implement Circuit Location
+    func fetchCircuitLocation() {
+        api.fetchData(url: "https://ergast.com/api/f1/2023.json", model: RaceData.self) { result in
+            self.runOnMain {
+                for race in result.MRData.RaceTable.Races {
+                    let newCircuit = Circuit(circuitId: race.Circuit.circuitId, url: race.Circuit.url, circuitName: race.Circuit.circuitName, Location: Location(lat: race.Circuit.Location.lat, long: race.Circuit.Location.long, locality: race.Circuit.Location.locality, country: race.Circuit.Location.country))
+                    self.circuitLocation.append(newCircuit)
+                    self.setRegionLocation(for: newCircuit)
+//                    print(self.circuitLocation)
+                }
+            }
+        } failure: { error in
+            self.runOnMain {
+                print("Circuit: \(error.localizedDescription)")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                    print("Trying again to fetch Circuit...")
+                    self.fetchCircuitLocation()
                 }
             }
         }
@@ -166,6 +189,14 @@ class RaceListViewModel: ObservableObject {
     func setRegion(for race: Race) {
         let latitude = race.Circuit.Location.lat
         let longitude = race.Circuit.Location.long
+        let center = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        region = MKCoordinateRegion(center: center, span: span)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
+    }
+    func setRegionLocation(for circuit: Circuit) {
+        let latitude = circuit.Location.lat
+        let longitude = circuit.Location.long
         let center = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         region = MKCoordinateRegion(center: center, span: span)
