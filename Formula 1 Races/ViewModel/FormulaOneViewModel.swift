@@ -17,13 +17,13 @@ class RaceListViewModel: ObservableObject {
     
     private let api = APIManager()
     
-    func runOnMain(_ method: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            withAnimation {
-                method()
-            }
-        }
-    }
+//    func runOnMain(_ method: @escaping () -> Void) {
+//        DispatchQueue.main.async {
+//            withAnimation {
+//                method()
+//            }
+//        }
+//    }
     
     func fetchRaces() {
 //        let url = URL(string: "https://ergast.com/api/f1/2023.json")!
@@ -50,16 +50,12 @@ class RaceListViewModel: ObservableObject {
 //            }
 //        }.resume()
         api.fetchData(url: "https://ergast.com/api/f1/2023.json", model: RaceData.self) { result in
-            self.runOnMain {
+            DispatchQueue.main.async {
                 self.races = result.MRData.RaceTable.Races
             }
         } failure: { error in
-            self.runOnMain {
-                print("Races: \(error.localizedDescription)")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    print("Trying again to fetch Races...")
-                    self.fetchRaces()
-                }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                self.fetchRaces()
             }
         }
     }
@@ -67,21 +63,16 @@ class RaceListViewModel: ObservableObject {
     //Implement Circuit Location
     func fetchCircuitLocation() {
         api.fetchData(url: "https://ergast.com/api/f1/2023.json", model: RaceData.self) { result in
-            self.runOnMain {
+            DispatchQueue.main.async {
                 for race in result.MRData.RaceTable.Races {
                     let newCircuit = Circuit(circuitId: race.Circuit.circuitId, url: race.Circuit.url, circuitName: race.Circuit.circuitName, Location: Location(lat: race.Circuit.Location.lat, long: race.Circuit.Location.long, locality: race.Circuit.Location.locality, country: race.Circuit.Location.country))
                     self.circuitLocation.append(newCircuit)
                     self.setRegionLocation(for: newCircuit)
-//                    print(self.circuitLocation)
                 }
             }
         } failure: { error in
-            self.runOnMain {
-                print("Circuit: \(error.localizedDescription)")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    print("Trying again to fetch Circuit...")
-                    self.fetchCircuitLocation()
-                }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                self.fetchCircuitLocation()
             }
         }
     }

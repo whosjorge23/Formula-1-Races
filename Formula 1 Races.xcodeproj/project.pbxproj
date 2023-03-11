@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCC377F829BC84C400113A80 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC377F729BC84C400113A80 /* MainView.swift */; };
 		CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */; };
 		CCCBCC3629B48BA40019D8EA /* races.json in Resources */ = {isa = PBXBuildFile; fileRef = CCCBCC3529B48BA40019D8EA /* races.json */; };
 		CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CCC377F729BC84C400113A80 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsView.swift; sourceTree = "<group>"; };
 		CCCBCC3529B48BA40019D8EA /* races.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = races.json; sourceTree = "<group>"; };
 		CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 				CCE9925B29B3350F00674001 /* RaceListView.swift */,
 				CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */,
 				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
+				CCC377F729BC84C400113A80 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */,
+				CCC377F829BC84C400113A80 /* MainView.swift in Sources */,
 				CCE9927529B33DEC00674001 /* FormulaOneViewModel.swift in Sources */,
 				CCE9926929B3359D00674001 /* FormulaOneModel.swift in Sources */,
 				CCE9925C29B3350F00674001 /* RaceListView.swift in Sources */,

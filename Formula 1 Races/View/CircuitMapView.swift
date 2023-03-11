@@ -20,30 +20,39 @@ struct CircuitMapView: View {
             return mapRegion
         }()
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: viewModel.circuitLocation, annotationContent: {
-                    item in
-            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(item.Location.lat) ?? 0.0, longitude: Double(item.Location.long) ?? 0.0)) {
-                ZStack {
-                Rectangle()
-                        .foregroundColor(.white.opacity(0.7))
-                    .cornerRadius(10)
-                    .frame(width: 120, height: 60)
-                    .shadow(radius: 5)
-                VStack {
-                    Text("🏁")
-                        .font(.title)
-                    Text(item.circuitName)
-                        .font(.caption)
-                        .multilineTextAlignment(.center)
+        ZStack {
+            Text("Circuits Map")
+            Map(coordinateRegion: $region, annotationItems: viewModel.circuitLocation, annotationContent: {
+                        item in
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(item.Location.lat) ?? 0.0, longitude: Double(item.Location.long) ?? 0.0)) {
+                    ZStack {
+                    Rectangle()
+                            .foregroundColor(.white.opacity(0.7))
+                        .cornerRadius(10)
+                        .frame(width: 120, height: 60)
+                        .shadow(radius: 5)
+                    VStack {
+                        Text("🏁")
+                            .font(.title)
+                        Text(item.circuitName)
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                    }
                 }
+                }
+                        
+            })
+            .ignoresSafeArea(.all, edges: .all)
+    //        .cornerRadius(10)
+            .onAppear {
+                viewModel.fetchCircuitLocation()
             }
+            VStack {
+                Text("Circuits Map")
+                    .font(.largeTitle)
+                Spacer()
             }
-                    
-        })
-        .ignoresSafeArea(.all, edges: .all)
-//        .cornerRadius(10)
-        .onAppear {
-            viewModel.fetchCircuitLocation()
+            
         }
     }
 }
