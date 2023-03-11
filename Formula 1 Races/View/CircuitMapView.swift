@@ -26,19 +26,26 @@ struct CircuitMapView: View {
                         item in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(item.Location.lat) ?? 0.0, longitude: Double(item.Location.long) ?? 0.0)) {
                     ZStack {
-                    Rectangle()
+                        Rectangle()
                             .foregroundColor(.white.opacity(0.7))
-                        .cornerRadius(10)
-                        .frame(width: 120, height: 60)
-                        .shadow(radius: 5)
-                    VStack {
-                        Text("🏁")
-                            .font(.title)
-                        Text(item.circuitName)
-                            .font(.caption)
-                            .multilineTextAlignment(.center)
+                            .cornerRadius(10)
+                            .frame(width: 120, height: 70)
+                            .shadow(radius: 5)
+                            .overlay {
+                                VStack {
+                                    Text("🏁")
+                                        .font(.title)
+                                    Text(item.circuitName)
+                                        .font(.caption2)
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(nil)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
+                                
+                            }
+                        
+                    
                     }
-                }
                 }
                         
             })
@@ -48,8 +55,15 @@ struct CircuitMapView: View {
                 viewModel.fetchCircuitLocation()
             }
             VStack {
-                Text("Circuits Map")
-                    .font(.largeTitle)
+                Rectangle()
+                    .foregroundColor(.white.opacity(0.7))
+                    .cornerRadius(10)
+                    .frame(width: .infinity, height: 60)
+                    .shadow(radius: 5)
+                    .overlay {
+                        Text("Circuits Map")
+                            .font(.largeTitle)
+                    }
                 Spacer()
             }
             
