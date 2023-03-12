@@ -12,21 +12,21 @@ struct ConstructorsView: View {
     var body: some View {
         NavigationView {
             List(viewModel.constructors, id: \.id) { constructor in
-//                NavigationLink(destination: RaceDetailsView(race: race)) {
+                NavigationLink(destination: ConstructorDetailsView(constructor: constructor)) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("**\(constructor.name)**")
                                 .font(.headline)
                             Text("**Nationality** \(constructor.nationality) \(viewModel.constructorNationalityFlag(nationality: constructor.nationality))")
                                 .font(.subheadline)
-                            Text("**Power Unit** \(viewModel.constructorPowerUnit(powerUnit: constructor.name))")
+                            Text("**Power Unit** \(viewModel.constructorPowerUnit(constructorName: constructor.name))")
                                 .font(.subheadline)
-                            Text("**Drivers** \(viewModel.constructorDrivers(drivers: constructor.name)[0]) \(viewModel.constructorDrivers(drivers: constructor.name)[1])")
+                            Text("**Drivers** \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
                                 .font(.subheadline)
                         }
                         Spacer()
                         VStack {
-                            AsyncImage(url: URL(string: viewModel.constructorImageUrl(constructor: constructor.name))) { image in
+                            AsyncImage(url: URL(string: viewModel.constructorImageUrl(constructorName: constructor.name))) { image in
                                             image.resizable()
                                         } placeholder: {
                                             Image(systemName: "icloud.slash")
@@ -34,7 +34,7 @@ struct ConstructorsView: View {
                                         .frame(width: 60, height: 60)
                         }
                     }
-//                }
+                }
                 
             }
             .navigationTitle("Constructors 2023")
