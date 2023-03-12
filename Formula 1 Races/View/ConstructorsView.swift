@@ -21,7 +21,7 @@ struct ConstructorsView: View {
                                 .font(.subheadline)
                             Text("**Power Unit** \(viewModel.constructorPowerUnit(constructorName: constructor.name))")
                                 .font(.subheadline)
-                            Text("**Drivers** \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
+                            Text("**Drivers** \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) - \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
                                 .font(.subheadline)
                         }
                         Spacer()

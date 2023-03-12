@@ -21,7 +21,6 @@ struct CircuitMapView: View {
         }()
     var body: some View {
         ZStack {
-            Text("Circuits Map")
             Map(coordinateRegion: $region, annotationItems: viewModel.circuitLocation, annotationContent: {
                         item in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(item.Location.lat) ?? 0.0, longitude: Double(item.Location.long) ?? 0.0)) {
@@ -36,6 +35,7 @@ struct CircuitMapView: View {
                                     Text("🏁")
                                         .font(.title)
                                     Text(item.circuitName)
+                                        .foregroundColor(.blue)
                                         .font(.caption2)
                                         .multilineTextAlignment(.center)
                                         .lineLimit(nil)
@@ -54,18 +54,19 @@ struct CircuitMapView: View {
             .onAppear {
                 viewModel.fetchCircuitLocation()
             }
-            VStack {
-                Rectangle()
-                    .foregroundColor(.white.opacity(0.7))
-                    .cornerRadius(10)
-                    .frame(width: .infinity, height: 60)
-                    .shadow(radius: 5)
-                    .overlay {
-                        Text("Circuits Map")
-                            .font(.largeTitle)
-                    }
-                Spacer()
-            }
+//            VStack {
+//                Rectangle()
+//                    .foregroundColor(.white.opacity(0.7))
+//                    .cornerRadius(10)
+//                    .frame(width: .infinity, height: 60)
+//                    .shadow(radius: 5)
+//                    .overlay {
+//                        Text("Circuits Map")
+//                            .font(.largeTitle)
+//                            .foregroundColor(.blue)
+//                    }
+//                Spacer()
+//            }
             
         }
     }

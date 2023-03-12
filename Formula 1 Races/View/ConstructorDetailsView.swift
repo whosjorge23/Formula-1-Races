@@ -42,7 +42,7 @@ struct ConstructorDetailsView: View {
                 .font(.title2)
             Text("**First Team Entry**: \(viewModel.constructorEntry(constructorName: constructor.name))")
                 .font(.title2)
-            Text("**Drivers**: \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
+            Text("**Drivers**: \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) - \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
                 .font(.title2)
             
             Spacer()
