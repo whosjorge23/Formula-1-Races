@@ -12,12 +12,20 @@ struct MainView: View {
         TabView {
             RaceListView()
                 .tabItem {
-                    Label("Race List", systemImage: "list.dash")
+                    Label("Race List", systemImage: "flag.checkered.2.crossed")
             }
 
             CircuitMapView()
                 .tabItem {
                     Label("Circuits Map", systemImage: "map")
+            }
+            ConstructorsView()
+                .tabItem {
+                    Label("Constructors Info", systemImage: "car")
+            }
+            CreditsView()
+                .tabItem {
+                    Label("Credits", systemImage: "person")
             }
         }
     }
