@@ -31,20 +31,32 @@ struct ConstructorDetailsView: View {
                             Image(systemName: "icloud.slash")
                         }
                         .frame(width: .infinity, height: 110)
-            Text("**Full Team Name**: \(viewModel.constructorFullName(constructorName: constructor.name))")
-                .font(.title2)
-            Text("**Nationality**: \(constructor.nationality) \(viewModel.constructorNationalityFlag(nationality: constructor.nationality))")
-                .font(.title2)
-            Text("**Base**: \(viewModel.constructorBase(constructorName: constructor.name))")
-                .font(.title2)
+            Group {
+                Text("**Full Team Name**: \(viewModel.constructorFullName(constructorName: constructor.name))")
+                    .font(.title2)
+                Text("**Nationality**: \(constructor.nationality) \(viewModel.constructorNationalityFlag(nationality: constructor.nationality))")
+                    .font(.title2)
+                Text("**Base**: \(viewModel.constructorBase(constructorName: constructor.name))")
+                    .font(.title2)
 
-            Text("**Power Unit**: \(viewModel.constructorPowerUnit(constructorName: constructor.name))")
-                .font(.title2)
-            Text("**First Team Entry**: \(viewModel.constructorEntry(constructorName: constructor.name))")
-                .font(.title2)
-            Text("**Drivers**: \(viewModel.constructorDrivers(constructorName: constructor.name)[0]) - \(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
-                .font(.title2)
-            
+                Text("**Power Unit**: \(viewModel.constructorPowerUnit(constructorName: constructor.name))")
+                    .font(.title2)
+                Text("**First Team Entry**: \(viewModel.constructorEntry(constructorName: constructor.name))")
+                    .font(.title2)
+                HStack {
+                    Text("**Drivers**:")
+                        .font(.title2)
+                    
+                    NavigationLink(destination: DriverDetailsView(selectedDriver: viewModel.constructorDriversID(constructorName: constructor.name)[0])) {
+                        Text("\(viewModel.constructorDrivers(constructorName: constructor.name)[0])")
+                            .font(.title2)
+                    }
+                    NavigationLink(destination: DriverDetailsView(selectedDriver: viewModel.constructorDriversID(constructorName: constructor.name)[1])) {
+                        Text("\(viewModel.constructorDrivers(constructorName: constructor.name)[1])")
+                            .font(.title2)
+                    }
+                }
+            }
             Spacer()
             .padding()
             .navigationTitle(constructor.name)

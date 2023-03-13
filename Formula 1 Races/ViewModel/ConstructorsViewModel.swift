@@ -8,7 +8,6 @@
 import Foundation
 
 import SwiftUI
-import MapKit
 
 class ConstructorsViewModel: ObservableObject {
     @Published var constructors = [Constructors]()
@@ -192,6 +191,34 @@ class ConstructorsViewModel: ObservableObject {
                 return ["Max Verstappen", "Sergio Perez"]
             case "Williams":
                 return ["Alexander Albon", "Logan Sargeant"]
+            default:
+                return ["Driver 1", "Driver 2"]
+        }
+    }
+    
+    func constructorDriversID(constructorName: String) -> [String] {
+//        print(constructorName)
+        switch constructorName {
+            case "Alfa Romeo":
+                return ["zhou", "bottas"]
+            case "AlphaTauri":
+                return ["tsunoda", "de_vries"]
+            case "Alpine F1 Team":
+                return ["gasly", "ocon"]
+            case "Aston Martin":
+                return ["stroll", "alonso"]
+            case "Ferrari":
+                return ["leclerc", "sainz"]
+            case "Haas F1 Team":
+                return ["kevin_magnussen", "hulkenberg"]
+            case "McLaren":
+                return ["norris", "piastri"]
+            case "Mercedes":
+                return ["hamilton", "russell"]
+            case "Red Bull":
+                return ["max_verstappen", "perez"]
+            case "Williams":
+                return ["albon", "sargeant"]
             default:
                 return ["Driver 1", "Driver 2"]
         }
