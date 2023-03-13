@@ -45,27 +45,43 @@ class DriversViewModel: ObservableObject {
     }
     
     
-//    func constructorNationalityFlag(nationality: String) -> String {
-////        print(nationality)
-//        switch nationality {
-//            case "Swiss":
-//                return "🇨🇭"
-//            case "British":
-//                return "🇬🇧"
-//            case "French":
-//                return "🇫🇷"
-//            case "German":
-//                return "🇩🇪"
-//            case "American":
-//                return "🇺🇸"
-//            case "Italian":
-//                return "🇮🇹"
-//            case "Austrian":
-//                return "🇦🇹"
-//            default:
-//                return "Country"
-//        }
-//    }
+    func driverNationalityFlag(nationality: String) -> String {
+//        print(nationality)
+        switch nationality {
+            case "Thai":
+                return "🇹🇭"
+            case "Spanish":
+                return "🇪🇸"
+            case "British":
+                return "🇬🇧"
+            case "French":
+                return "🇫🇷"
+            case "German":
+                return "🇩🇪"
+            case "American":
+                return "🇺🇸"
+            case "Finnish":
+                return "🇫🇮"
+            case "Dutch":
+                return "🇳🇱"
+            case "Monegasque":
+                return "🇲🇨"
+            case "Danish":
+                return "🇩🇰"
+            case "Mexican":
+                return "🇲🇽"
+            case "Australian":
+                return "🇦🇺"
+            case "Canadian":
+                return "🇨🇦"
+            case "Japanese":
+                return "🇯🇵"
+            case "Chinese":
+                return "🇨🇳"
+            default:
+                return "Country"
+        }
+    }
     
 }
 

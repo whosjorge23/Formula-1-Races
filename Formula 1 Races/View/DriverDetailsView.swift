@@ -14,7 +14,16 @@ struct DriverDetailsView: View {
         var body: some View {
             if let driver = viewModel.driver.first {
                 VStack {
+                    Text("\(driver.permanentNumber)")
+                        .font(.largeTitle)
                     Text("\(driver.givenName) \(driver.familyName)")
+                        .font(.largeTitle)
+                    Text("\(driver.code)")
+                        .font(.largeTitle)
+                    Text("\(driver.nationality) \(viewModel.driverNationalityFlag(nationality: driver.nationality))")
+                        .font(.largeTitle)
+                    Text("\(driver.dateOfBirth)")
+                        .font(.largeTitle)
                 }
                 
                 .onAppear {
@@ -31,6 +40,6 @@ struct DriverDetailsView: View {
 
 struct DriverDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DriverDetailsView(selectedDriver: "alonso")
+        DriverDetailsView(selectedDriver: "leclerc")
     }
 }
