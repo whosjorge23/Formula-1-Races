@@ -30,13 +30,13 @@ struct DriverDetailsView: View {
                                             .foregroundColor(Color.black.opacity(0.8))
                                             .overlay {
                                                 VStack{
-                                                    Text("**\(driver.code)**")
+                                                    Text("**\(driver.permanentNumber) \(viewModel.driverNationalityFlag(nationality: driver.nationality))**")
                                                         .font(.title)
-                                                    Text("\(driver.givenName) \(driver.familyName) \(driver.permanentNumber)")
+                                                    Text("**Name**: \(driver.givenName) \(driver.familyName) \(driver.code)")
                                                         .font(.title2)
-                                                    Text("\(driver.nationality) \(viewModel.driverNationalityFlag(nationality: driver.nationality))")
+                                                    Text("**Nationality**: \(driver.nationality) \(viewModel.driverNationalityFlag(nationality: driver.nationality))")
                                                         .font(.title2)
-                                                    Text("\(driver.dateOfBirth)")
+                                                    Text("**Date of birth**: \(driver.dateOfBirth)")
                                                         .font(.title2)
                                                 }
                                             }
@@ -53,6 +53,9 @@ struct DriverDetailsView: View {
 //                        .font(.largeTitle)
 //                    Text("\(driver.dateOfBirth)")
 //                        .font(.largeTitle)
+                    
+                    //TODO: Add Driver Helmet
+                    //TODO: Add Driver BirthPlace
                     Spacer()
                 }
                 .preferredColorScheme(.dark)
