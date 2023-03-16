@@ -177,6 +177,56 @@ class RaceListViewModel: ObservableObject {
         }
     }
     
+    func circuitPic(circuitName: String) -> String {
+//        print(circuitName)
+        switch circuitName {
+            case "Bahrain International Circuit":
+                return "https://media.formula1.com/image/upload/f_auto/q_auto/v1677245035/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain.png.transform/2col-retina/image.png"
+            case "Jeddah Corniche Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi%20Arabia.png.transform/2col-retina/image.png"
+            case "Albert Park Grand Prix Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia.png.transform/2col-retina/image.png"
+            case "Azerbaijan Grand Prix":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan.png.transform/2col-retina/image.png"
+            case "Miami International Autodrome":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami.png.transform/2col-retina/image.png"
+            case "Autodromo Enzo e Dino Ferrari":
+                return "🇺🇸"
+            case "Circuit de Monaco":
+                return "🇺🇸"
+            case "Circuit de Barcelona-Catalunya":
+                return "🇮🇹"
+            case "Monaco":
+                return "🇲🇨"
+            case "Spain":
+                return "🇪🇸"
+            case "Canada":
+                return "🇨🇦"
+            case "Austria":
+                return "🇦🇹"
+            case "Hungary":
+                return "🇭🇺"
+            case "Belgium":
+                return "🇧🇪"
+            case "Netherlands":
+                return "🇳🇱"
+            case "Singapore":
+                return "🇸🇬"
+            case "Japan":
+                return "🇯🇵"
+            case "Qatar":
+                return "🇶🇦"
+            case "Mexico":
+                return "🇲🇽"
+            case "Brazil":
+                return "🇧🇷"
+            case "UAE":
+                return "🇦🇪"
+            default:
+                return "Country"
+        }
+    }
+    
     func setRegion(for race: Race) {
         let latitude = race.Circuit.Location.lat
         let longitude = race.Circuit.Location.long

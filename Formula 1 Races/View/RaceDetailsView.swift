@@ -13,102 +13,112 @@ struct RaceDetailsView: View {
     var race: Race
         
         var body: some View {
-            VStack(alignment: .leading) {
-                HStack {
-//                    Text(race.raceName)
-//                        .font(.largeTitle)
-                }
-//                Map(coordinateRegion: $viewModel.region)
-                Map(coordinateRegion: $viewModel.region, annotationItems: [$viewModel.annotation]) { annotation in
-                    MapAnnotation(coordinate: viewModel.annotation.coordinate) {
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.blue.opacity(0.50))
-                                .frame(width: 100, height: 100)
-                            Text("🏁")
-                                .font(.largeTitle)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    HStack {
+    //                    Text(race.raceName)
+    //                        .font(.largeTitle)
+                    }
+    //                Map(coordinateRegion: $viewModel.region)
+                    Map(coordinateRegion: $viewModel.region, annotationItems: [$viewModel.annotation]) { annotation in
+                        MapAnnotation(coordinate: viewModel.annotation.coordinate) {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(.blue.opacity(0.50))
+                                    .frame(width: 100, height: 100)
+                                Text("🏁")
+                                    .font(.largeTitle)
+                            }
                         }
                     }
-                }
-                    .frame(height: 300)
-                    .cornerRadius(10)
-                HStack {
-                    Text("**Date**: \(viewModel.formatDate(dateString: race.date))")
-                        .font(.title2)
+                        .frame(height: 300)
+                        .cornerRadius(10)
+                    HStack {
+                        Text("**Date**: \(viewModel.formatDate(dateString: race.date))")
+                            .font(.title2)
+                        Spacer()
+                        Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.time))")
+                            .font(.title2)
+                    }
+                    
+                    Text("**Circuit**: \(race.Circuit.circuitName)")
+                        .font(.title3)
+                    Text("**Location**: \(race.Circuit.Location.locality), \(race.Circuit.Location.country)\(viewModel.countryFlag(country: race.Circuit.Location.country))")
+                        .font(.title3)
+                    Group{
+                        VStack {
+                            HStack {
+                                Text("**First Practice**")
+                                    .font(.title3)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("**Date**: \(viewModel.formatDate(dateString: race.FirstPractice?.date ?? "N/A"))")
+                                    .font(.title3)
+                                Spacer()
+                                Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.FirstPractice?.time ?? "N/A"))")
+                                    .font(.title3)
+                            }
+                            
+                        }
+                        VStack {
+                            HStack {
+                                Text("**Second Practice**:")
+                                    .font(.title3)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("**Date**: \(viewModel.formatDate(dateString: race.SecondPractice?.date ?? "N/A"))")
+                                    .font(.title3)
+                                Spacer()
+                                Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.SecondPractice?.time ?? "N/A"))")
+                                    .font(.title3)
+                            }
+                        }
+                        VStack {
+                            HStack {
+                                Text("**Third Practice**:")
+                                    .font(.title3)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("**Date**: \(viewModel.formatDate(dateString: race.ThirdPractice?.date ?? "N/A"))")
+                                    .font(.title3)
+                                Spacer()
+                                Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.ThirdPractice?.time ?? "N/A"))")
+                                    .font(.title3)
+                            }
+                        }
+                        VStack {
+                            HStack {
+                                Text("**Qualifying**:")
+                                    .font(.title3)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("**Date**: \(viewModel.formatDate(dateString: race.Qualifying?.date ?? "N/A"))")
+                                    .font(.title3)
+                                Spacer()
+                                Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.Qualifying?.time ?? "N/A"))")
+                                    .font(.title3)
+                            }
+                        }
+                    }
                     Spacer()
-                    Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.time))")
-                        .font(.title2)
+                    AsyncImage(url: URL(string: viewModel.circuitPic(circuitName: race.Circuit.circuitName))) { image in
+                                    image.resizable()
+                                        .transition(.opacity)
+                                    
+                                } placeholder: {
+                                    Image(systemName: "icloud.slash")
+                                }
+                                .frame(width: 360, height: 260)
                 }
-                
-                Text("**Circuit**: \(race.Circuit.circuitName)")
-                    .font(.title3)
-                Text("**Location**: \(race.Circuit.Location.locality), \(race.Circuit.Location.country)\(viewModel.countryFlag(country: race.Circuit.Location.country))")
-                    .font(.title3)
-                Group{
-                    VStack {
-                        HStack {
-                            Text("**First Practice**")
-                                .font(.title3)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.FirstPractice?.date ?? "N/A"))")
-                                .font(.title3)
-                            Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.FirstPractice?.time ?? "N/A"))")
-                                .font(.title3)
-                        }
-                        
-                    }
-                    VStack {
-                        HStack {
-                            Text("**Second Practice**:")
-                                .font(.title3)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.SecondPractice?.date ?? "N/A"))")
-                                .font(.title3)
-                            Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.SecondPractice?.time ?? "N/A"))")
-                                .font(.title3)
-                        }
-                    }
-                    VStack {
-                        HStack {
-                            Text("**Third Practice**:")
-                                .font(.title3)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.ThirdPractice?.date ?? "N/A"))")
-                                .font(.title3)
-                            Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.ThirdPractice?.time ?? "N/A"))")
-                                .font(.title3)
-                        }
-                    }
-                    VStack {
-                        HStack {
-                            Text("**Qualifying**:")
-                                .font(.title3)
-                            Spacer()
-                        }
-                        HStack {
-                            Text("**Date**: \(viewModel.formatDate(dateString: race.Qualifying?.date ?? "N/A"))")
-                                .font(.title3)
-                            Spacer()
-                            Text("**Time**: \(viewModel.formatTimeInGMT(timeString: race.Qualifying?.time ?? "N/A"))")
-                                .font(.title3)
-                        }
-                    }
-                }
-                Spacer()
+                .padding()
+                .navigationTitle(race.raceName)
+                .onAppear{
+                    viewModel.setRegion(for: race)
             }
-            .padding()
-            .navigationTitle(race.raceName)
-            .onAppear{
-                viewModel.setRegion(for: race)
             }
         }
 }

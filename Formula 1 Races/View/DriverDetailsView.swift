@@ -43,18 +43,15 @@ struct DriverDetailsView: View {
                                         
                                     }
                                 }
-//                    Text("\(driver.permanentNumber)")
-//                        .font(.largeTitle)
-//                    Text("\(driver.givenName) \(driver.familyName)")
-//                        .font(.largeTitle)
-//                    Text("\(driver.code)")
-//                        .font(.largeTitle)
-//                    Text("\(driver.nationality) \(viewModel.driverNationalityFlag(nationality: driver.nationality))")
-//                        .font(.largeTitle)
-//                    Text("\(driver.dateOfBirth)")
-//                        .font(.largeTitle)
-                    
                     //TODO: Add Driver Helmet
+                    AsyncImage(url: URL(string: viewModel.driversHelmetPic(driverID: selectedDriver))) { image in
+                                    image.resizable()
+                                        .transition(.opacity)
+                                    
+                                } placeholder: {
+                                    Image(systemName: "icloud.slash")
+                                }
+                                .frame(width: 360, height: 260)
                     //TODO: Add Driver BirthPlace
                     Spacer()
                 }
