@@ -191,37 +191,41 @@ class RaceListViewModel: ObservableObject {
             case "Miami International Autodrome":
                 return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami.png.transform/2col-retina/image.png"
             case "Autodromo Enzo e Dino Ferrari":
-                return "🇺🇸"
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Emilia%20Romagna.png.transform/2col-retina/image.png"
             case "Circuit de Monaco":
-                return "🇺🇸"
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco.png.transform/2col-retina/image.png"
             case "Circuit de Barcelona-Catalunya":
-                return "🇮🇹"
-            case "Monaco":
-                return "🇲🇨"
-            case "Spain":
-                return "🇪🇸"
-            case "Canada":
-                return "🇨🇦"
-            case "Austria":
-                return "🇦🇹"
-            case "Hungary":
-                return "🇭🇺"
-            case "Belgium":
-                return "🇧🇪"
-            case "Netherlands":
-                return "🇳🇱"
-            case "Singapore":
-                return "🇸🇬"
-            case "Japan":
-                return "🇯🇵"
-            case "Qatar":
-                return "🇶🇦"
-            case "Mexico":
-                return "🇲🇽"
-            case "Brazil":
-                return "🇧🇷"
-            case "UAE":
-                return "🇦🇪"
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain.png.transform/2col-retina/image.png"
+            case "Circuit Gilles Villeneuve":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada.png.transform/2col-retina/image.png"
+            case "Red Bull Ring":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria.png.transform/2col-retina/image.png"
+            case "Silverstone Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great%20Britain.png.transform/2col-retina/image.png"
+            case "Hungaroring":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary.png.transform/2col-retina/image.png"
+            case "Circuit de Spa-Francorchamps":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium.png.transform/2col-retina/image.png"
+            case "Circuit Park Zandvoort":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands.png.transform/2col-retina/image.png"
+            case "Autodromo Nazionale di Monza":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Italy.png.transform/2col-retina/image.png"
+            case "Marina Bay Street Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore.png.transform/2col-retina/image.png"
+            case "Suzuka Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan.png.transform/2col-retina/image.png"
+            case "Losail International Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar.png.transform/2col-retina/image.png"
+            case "Circuit of the Americas":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/United%20States.png.transform/2col-retina/image.png"
+            case "Autódromo Hermanos Rodríguez":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Mexico.png.transform/2col-retina/image.png"
+            case "Autódromo José Carlos Pace":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Brazil.png.transform/2col-retina/image.png"
+            case "Las Vegas Strip Street Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Las%20Vegas.png.transform/2col-retina/image.png"
+            case "Yas Marina Circuit":
+                return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi.png.transform/2col-retina/image.png"
             default:
                 return "Country"
         }
