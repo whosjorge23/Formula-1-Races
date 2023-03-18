@@ -51,7 +51,7 @@ struct DriverDetailsView: View {
                                 } placeholder: {
                                     Image(systemName: "icloud.slash")
                                 }
-                                .frame(width: 360, height: 260)
+                                .frame(width: 380, height: 260)
                     //TODO: Add Driver BirthPlace
                     Spacer()
                 }
@@ -70,6 +70,6 @@ struct DriverDetailsView: View {
 
 struct DriverDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DriverDetailsView(selectedDriver: "leclerc")
+        DriverDetailsView(selectedDriver: "tsunoda")
     }
 }
