@@ -79,35 +79,40 @@ class RaceListViewModel: ObservableObject {
     
     // Define a helper function to format the time in GMT timezone
     func formatTimeInGMT(timeString: String) -> String {
-//        let hour = timeString.dropLast(7)
-//        let minute = timeString.dropFirst(3).dropLast(4)
-//        let formattedTimeString = timeString.dropLast(4)
-//        print("\(hour):\(minute)") // prints "15:00"
-//        let localTimeZone = TimeZone.current
-//        print(localTimeZone.identifier) // prints the identifier of the local time zone
-//        return String("\((Int(hour) ?? 0) + 1):\(minute)")
-        let time = timeString.dropLast(1)
-        let gmtTimeString = time
-        var timeToString = "N/A"
-
+//        let time = timeString.dropLast(1)
+//        let gmtTimeString = time
+//        var timeToString = "N/A"
+//
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HH:mm:ss"
+//        formatter.timeZone = TimeZone(identifier: "GMT")
+//
+//        if let gmtDate = formatter.date(from: String(gmtTimeString)) {
+//            formatter.timeZone = TimeZone.current
+//            let localTimeString = formatter.string(from: gmtDate)
+//            timeToString = localTimeString
+////            print(localTimeString)
+//        } else {
+////            print("Invalid GMT time string")
+//        }
+//        let raceTime = timeToString.dropLast(3)
+//        if raceTime == "" {
+//            return "🤷‍♂️🤷‍♂️"
+//        }else {
+//            return String(raceTime)
+//        }
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        formatter.timeZone = TimeZone(identifier: "GMT")
+            formatter.dateFormat = "HH:mm:ss'Z'"
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
 
-        if let gmtDate = formatter.date(from: String(gmtTimeString)) {
-            formatter.timeZone = TimeZone.current
-            let localTimeString = formatter.string(from: gmtDate)
-            timeToString = localTimeString
-//            print(localTimeString)
-        } else {
-//            print("Invalid GMT time string")
-        }
-        let raceTime = timeToString.dropLast(3)
-        if raceTime == "" {
-            return "🤷‍♂️🤷‍♂️"
-        }else {
-            return String(raceTime)
-        }
+            if let date = formatter.date(from: timeString) {
+                formatter.dateFormat = "HH:mm"
+                formatter.timeZone = TimeZone.current
+                return formatter.string(from: date)
+            } else {
+                return "🤷‍♂️🤷‍♂️"
+            }
     }
     
     // Define a helper function to format the date

@@ -28,6 +28,7 @@ struct MainView: View {
                     Label("Credits", systemImage: "person")
             }
         }
+        .accentColor(.red)
         .preferredColorScheme(.dark)
     }
 }
