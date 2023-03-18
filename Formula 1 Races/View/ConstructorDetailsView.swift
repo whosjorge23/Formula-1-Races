@@ -21,6 +21,7 @@ struct ConstructorDetailsView: View {
                             Image(systemName: "icloud.slash")
                         }
                         .frame(width: .infinity, height: 200)
+//                        .aspectRatio(contentMode: .fit)
             Text("**Car**")
                 .font(.title2)
             AsyncImage(url: URL(string: viewModel.constructorImageCarUrl(constructorName: constructor.name))) { image in
@@ -30,7 +31,8 @@ struct ConstructorDetailsView: View {
                         } placeholder: {
                             Image(systemName: "icloud.slash")
                         }
-                        .frame(width: .infinity, height: 110)
+//                        .frame(width: .infinity, height: 110)
+                        .aspectRatio(contentMode: .fit)
             Group {
                 Text("**Full Team Name**: \(viewModel.constructorFullName(constructorName: constructor.name))")
                     .font(.title2)

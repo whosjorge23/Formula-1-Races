@@ -112,7 +112,8 @@ struct RaceDetailsView: View {
                                 } placeholder: {
                                     Image(systemName: "icloud.slash")
                                 }
-                                .frame(width: 360, height: 260)
+//                                .frame(width: 360, height: 260)
+                                .aspectRatio(contentMode: .fit)
                 }
                 .padding()
                 .navigationTitle(race.raceName)

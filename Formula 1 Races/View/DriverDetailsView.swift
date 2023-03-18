@@ -51,7 +51,8 @@ struct DriverDetailsView: View {
                                 } placeholder: {
                                     Image(systemName: "icloud.slash")
                                 }
-                                .frame(width: 380, height: 260)
+//                                .frame(width: 380, height: 260)
+                                .aspectRatio(contentMode: .fit)
                     //TODO: Add Driver BirthPlace
                     Spacer()
                 }

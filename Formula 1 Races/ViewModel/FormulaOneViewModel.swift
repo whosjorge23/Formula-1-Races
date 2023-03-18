@@ -186,7 +186,7 @@ class RaceListViewModel: ObservableObject {
                 return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi%20Arabia.png.transform/2col-retina/image.png"
             case "Albert Park Grand Prix Circuit":
                 return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia.png.transform/2col-retina/image.png"
-            case "Azerbaijan Grand Prix":
+            case "Baku City Circuit":
                 return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan.png.transform/2col-retina/image.png"
             case "Miami International Autodrome":
                 return "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami.png.transform/2col-retina/image.png"
