@@ -17,38 +17,7 @@ class RaceListViewModel: ObservableObject {
     
     private let api = APIManager()
     
-//    func runOnMain(_ method: @escaping () -> Void) {
-//        DispatchQueue.main.async {
-//            withAnimation {
-//                method()
-//            }
-//        }
-//    }
-    
     func fetchRaces() {
-//        let url = URL(string: "https://ergast.com/api/f1/2023.json")!
-//
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//
-//            guard let data = data else {
-//                print("No data received")
-//                return
-//            }
-//
-//            do {
-//                let raceData = try JSONDecoder().decode(RaceData.self, from: data)
-//                DispatchQueue.main.async {
-//                    self.races = raceData.MRData.RaceTable.Races
-//                    print("Race: \(raceData)")
-//                }
-//            } catch {
-//                print("Error: \(error.localizedDescription)")
-//            }
-//        }.resume()
         api.fetchData(url: "https://ergast.com/api/f1/2023.json", model: RaceData.self) { result in
             DispatchQueue.main.async {
                 self.races = result.MRData.RaceTable.Races
@@ -79,28 +48,6 @@ class RaceListViewModel: ObservableObject {
     
     // Define a helper function to format the time in GMT timezone
     func formatTimeInGMT(timeString: String) -> String {
-//        let time = timeString.dropLast(1)
-//        let gmtTimeString = time
-//        var timeToString = "N/A"
-//
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "HH:mm:ss"
-//        formatter.timeZone = TimeZone(identifier: "GMT")
-//
-//        if let gmtDate = formatter.date(from: String(gmtTimeString)) {
-//            formatter.timeZone = TimeZone.current
-//            let localTimeString = formatter.string(from: gmtDate)
-//            timeToString = localTimeString
-////            print(localTimeString)
-//        } else {
-////            print("Invalid GMT time string")
-//        }
-//        let raceTime = timeToString.dropLast(3)
-//        if raceTime == "" {
-//            return "🤷‍♂️🤷‍♂️"
-//        }else {
-//            return String(raceTime)
-//        }
         let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm:ss'Z'"
             formatter.locale = Locale(identifier: "en_US_POSIX")

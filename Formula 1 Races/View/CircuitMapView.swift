@@ -10,6 +10,7 @@ import MapKit
 
 struct CircuitMapView: View {
     @StateObject var viewModel = RaceListViewModel()
+    @State private var selectedCircuit: Circuit?
     @State private var region : MKCoordinateRegion = {
             var mapCoordinate = CLLocationCoordinate2D(latitude: 42.6384261, longitude: 12.674297)
             
@@ -43,12 +44,19 @@ struct CircuitMapView: View {
                                 }
                                 
                             }
+                            .onTapGesture {
+                                selectedCircuit = item
+                                print(selectedCircuit)
+                            }
                         
                     
                     }
                 }
                         
             })
+            .sheet(item: $selectedCircuit) { circuit in
+                CircuitDetailsView(circuit: circuit)
+            }
             .ignoresSafeArea(.all, edges: .all)
     //        .cornerRadius(10)
             .onAppear {
