@@ -17,6 +17,7 @@
 		CCC3780629BE2C6500113A80 /* DriversViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC3780529BE2C6500113A80 /* DriversViewModel.swift */; };
 		CCC3780829BE2D1600113A80 /* DriverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC3780729BE2D1600113A80 /* DriverModel.swift */; };
 		CCC3783029C7244F00113A80 /* CircuitDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC3782F29C7244F00113A80 /* CircuitDetailsView.swift */; };
+		CCC3785029CEEF2200113A80 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC3784F29CEEF2200113A80 /* ResultModel.swift */; };
 		CCCBCC3229B3AEED0019D8EA /* RaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */; };
 		CCCBCC3629B48BA40019D8EA /* races.json in Resources */ = {isa = PBXBuildFile; fileRef = CCCBCC3529B48BA40019D8EA /* races.json */; };
 		CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */; };
@@ -40,6 +41,7 @@
 		CCC3780529BE2C6500113A80 /* DriversViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversViewModel.swift; sourceTree = "<group>"; };
 		CCC3780729BE2D1600113A80 /* DriverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModel.swift; sourceTree = "<group>"; };
 		CCC3782F29C7244F00113A80 /* CircuitDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitDetailsView.swift; sourceTree = "<group>"; };
+		CCC3784F29CEEF2200113A80 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailsView.swift; sourceTree = "<group>"; };
 		CCCBCC3529B48BA40019D8EA /* races.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = races.json; sourceTree = "<group>"; };
 		CCCBCC3729B4D1CB0019D8EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				CCE9926829B3359D00674001 /* RaceModel.swift */,
 				CCC377FD29BCF03700113A80 /* ConstructorModel.swift */,
 				CCC3780729BE2D1600113A80 /* DriverModel.swift */,
+				CCC3784F29CEEF2200113A80 /* ResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				CCC3780629BE2C6500113A80 /* DriversViewModel.swift in Sources */,
 				CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */,
+				CCC3785029CEEF2200113A80 /* ResultModel.swift in Sources */,
 				CCC377F829BC84C400113A80 /* MainView.swift in Sources */,
 				CCE9927529B33DEC00674001 /* FormulaOneViewModel.swift in Sources */,
 				CCE9926929B3359D00674001 /* RaceModel.swift in Sources */,
