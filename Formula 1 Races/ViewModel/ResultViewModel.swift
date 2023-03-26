@@ -16,6 +16,7 @@ class ResultViewModel: ObservableObject {
         api.fetchData(url: "https://ergast.com/api/f1/2023/results.json", model: ResultData.self) { result in
             DispatchQueue.main.async {
                 self.races = result.MRData.RaceTable.Races
+                print("Races fetched: \(self.races.count)")
             }
         } failure: { error in
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {

@@ -29,6 +29,7 @@
 		CCE9926129B3350F00674001 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE9926029B3350F00674001 /* Preview Assets.xcassets */; };
 		CCE9926929B3359D00674001 /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9926829B3359D00674001 /* RaceModel.swift */; };
 		CCE9927529B33DEC00674001 /* FormulaOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */; };
+		CCF1BAAA29D05F0200E908F9 /* ResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAA929D05F0200E908F9 /* ResultListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		CCE9926029B3350F00674001 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CCE9926829B3359D00674001 /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
 		CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneViewModel.swift; sourceTree = "<group>"; };
+		CCF1BAA929D05F0200E908F9 /* ResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE9925B29B3350F00674001 /* RaceListView.swift */,
+				CCF1BAA929D05F0200E908F9 /* ResultListView.swift */,
 				CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */,
 				CCC3782F29C7244F00113A80 /* CircuitDetailsView.swift */,
 				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
@@ -245,6 +248,7 @@
 				CCC3780029BCF28B00113A80 /* ConstructorsViewModel.swift in Sources */,
 				CCC3780829BE2D1600113A80 /* DriverModel.swift in Sources */,
 				CCC3780229BDC8A300113A80 /* ConstructorDetailsView.swift in Sources */,
+				CCF1BAAA29D05F0200E908F9 /* ResultListView.swift in Sources */,
 				CCC377FA29BCD09F00113A80 /* CreditsView.swift in Sources */,
 				CCCBCC3B29BC6E750019D8EA /* CircuitMapView.swift in Sources */,
 				CCC377FE29BCF03700113A80 /* ConstructorModel.swift in Sources */,
