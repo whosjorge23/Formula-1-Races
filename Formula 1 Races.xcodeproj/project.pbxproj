@@ -30,6 +30,7 @@
 		CCE9926929B3359D00674001 /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9926829B3359D00674001 /* RaceModel.swift */; };
 		CCE9927529B33DEC00674001 /* FormulaOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */; };
 		CCF1BAAA29D05F0200E908F9 /* ResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAA929D05F0200E908F9 /* ResultListView.swift */; };
+		CCF1BAAC29D81E1200E908F9 /* ResultDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAAB29D81E1200E908F9 /* ResultDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		CCE9926829B3359D00674001 /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
 		CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneViewModel.swift; sourceTree = "<group>"; };
 		CCF1BAA929D05F0200E908F9 /* ResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListView.swift; sourceTree = "<group>"; };
+		CCF1BAAB29D81E1200E908F9 /* ResultDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				CCCBCC3A29BC6E750019D8EA /* CircuitMapView.swift */,
 				CCC3782F29C7244F00113A80 /* CircuitDetailsView.swift */,
 				CCCBCC3129B3AEED0019D8EA /* RaceDetailsView.swift */,
+				CCF1BAAB29D81E1200E908F9 /* ResultDetailView.swift */,
 				CCC377FB29BCDFF000113A80 /* ConstructorsView.swift */,
 				CCC3780129BDC8A300113A80 /* ConstructorDetailsView.swift */,
 				CCC3780329BDFE3D00113A80 /* DriverDetailsView.swift */,
@@ -245,6 +248,7 @@
 				CCC377FC29BCDFF000113A80 /* ConstructorsView.swift in Sources */,
 				CCC3785229CEF3B300113A80 /* ResultViewModel.swift in Sources */,
 				CCE9925A29B3350F00674001 /* Formula_1_RacesApp.swift in Sources */,
+				CCF1BAAC29D81E1200E908F9 /* ResultDetailView.swift in Sources */,
 				CCC3780029BCF28B00113A80 /* ConstructorsViewModel.swift in Sources */,
 				CCC3780829BE2D1600113A80 /* DriverModel.swift in Sources */,
 				CCC3780229BDC8A300113A80 /* ConstructorDetailsView.swift in Sources */,

@@ -9,18 +9,24 @@ import SwiftUI
 
 struct ResultListView: View {
     @StateObject var vmResult = ResultViewModel()
-        
-        var body: some View {
-            List(vmResult.races, id: \.round) { race in
-                NavigationLink(destination: CreditsView()) {
-                Text(race.raceName)
+
+    var body: some View {
+        NavigationView {
+            if vmResult.races.isEmpty {
+                Text("No results found")
+            } else {
+                List(vmResult.races, id: \.round) { race in
+                    NavigationLink(destination: ResultDetailView(results: race.Results)) {
+                        Text(race.raceName)
+                    }
+                    
                 }
+                .navigationTitle("Races Result")
             }
-//            .navigationTitle("Races 2023")
-            .onAppear {
-                vmResult.fetchRacesResult()
-            }
+                
         }
+        .preferredColorScheme(.dark)
+    }
 }
 
 struct ResultListView_Previews: PreviewProvider {
