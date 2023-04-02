@@ -11,8 +11,7 @@ import SwiftUI
 struct Formula_1_RacesApp: App {
     var body: some Scene {
         WindowGroup {
-//            MainView()
-            ResultListView()
+            MainView()
         }
     }
 }

@@ -10,8 +10,10 @@ import SwiftUI
 struct CreditsView: View {
     var body: some View {
         VStack {
+            Text("Developer Credits")
+                .bold()
+                .font(.largeTitle)
             Form {
-                // MARK: - SECTION #2
                 Section(header: Text("Application")) {
                     
                     InfoRowView(name: "Developer", content: "Giorgio Giannotta")

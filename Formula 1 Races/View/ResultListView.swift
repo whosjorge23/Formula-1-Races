@@ -21,7 +21,7 @@ struct ResultListView: View {
                     }
                     
                 }
-                .navigationTitle("Races Result")
+                .navigationTitle("Results")
             }
                 
         }

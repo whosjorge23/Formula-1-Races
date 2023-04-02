@@ -31,6 +31,7 @@
 		CCE9927529B33DEC00674001 /* FormulaOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */; };
 		CCF1BAAA29D05F0200E908F9 /* ResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAA929D05F0200E908F9 /* ResultListView.swift */; };
 		CCF1BAAC29D81E1200E908F9 /* ResultDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAAB29D81E1200E908F9 /* ResultDetailView.swift */; };
+		CCF1BAAE29D86B4200E908F9 /* CircleTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF1BAAD29D86B4200E908F9 /* CircleTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		CCE9927429B33DEC00674001 /* FormulaOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaOneViewModel.swift; sourceTree = "<group>"; };
 		CCF1BAA929D05F0200E908F9 /* ResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListView.swift; sourceTree = "<group>"; };
 		CCF1BAAB29D81E1200E908F9 /* ResultDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailView.swift; sourceTree = "<group>"; };
+		CCF1BAAD29D86B4200E908F9 /* CircleTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				CCE9925929B3350F00674001 /* Formula_1_RacesApp.swift */,
 				CCC377F729BC84C400113A80 /* MainView.swift */,
+				CCF1BAAD29D86B4200E908F9 /* CircleTabBarView.swift */,
 				CCCBCC3929B50A930019D8EA /* APIManager */,
 				CCCBCC3429B48B710019D8EA /* Data */,
 				CCCBCC3329B488860019D8EA /* View */,
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF1BAAE29D86B4200E908F9 /* CircleTabBarView.swift in Sources */,
 				CCC3780629BE2C6500113A80 /* DriversViewModel.swift in Sources */,
 				CCCBCC3829B4D1CB0019D8EA /* APIManager.swift in Sources */,
 				CCC3785029CEEF2200113A80 /* ResultModel.swift in Sources */,

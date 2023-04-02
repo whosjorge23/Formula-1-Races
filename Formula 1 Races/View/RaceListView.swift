@@ -34,7 +34,7 @@ struct RaceListView: View {
                 }
                 
             }
-            .navigationTitle("Races 2023")
+            .navigationTitle("Races")
         }
 //        .environmentObject(viewModel)
         .onAppear {

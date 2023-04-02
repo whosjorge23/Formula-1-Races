@@ -37,7 +37,7 @@ struct ConstructorsView: View {
                 }
                 
             }
-            .navigationTitle("Constructors 2023")
+            .navigationTitle("Constructors")
         }
         
         .onAppear{
